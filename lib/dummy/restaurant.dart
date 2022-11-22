@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:faker/faker.dart';
-import 'package:gunma_eats/models/Restaurant.dart';
+import 'package:gunma_eats/models/restaurant.dart';
 
 var rand = math.Random();
 
