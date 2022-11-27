@@ -5,7 +5,7 @@ import 'package:gunma_eats/models/restaurant.dart';
 
 var rand = math.Random();
 
-int randRangeInt(int min, int max) {
+int randNextIntWithRange(int min, int max) {
   return min + rand.nextInt(max - min);
 }
 
@@ -14,10 +14,13 @@ var dummyRestaurant = List.generate(
   (index) => Restaurant(
       id: index,
       name: faker.food.restaurant(),
-      fastestDeliveryTimeInMinutes: randRangeInt(10, 30),
-      latestDeliveryTimeInMinutes: randRangeInt(30, 60),
-      deliveryFee: randRangeInt(300, 500),
+      fastestDeliveryTimeInMinutes: randNextIntWithRange(10, 30),
+      latestDeliveryTimeInMinutes: randNextIntWithRange(30, 40),
+      deliveryFee: randNextIntWithRange(300, 500),
       rate: 5.0,
-      imageURL: faker.image
-          .image(width: 800, height: 600, keywords: ['food'], random: true)),
+      imageURL: faker.image.image(
+          width: 1280,
+          height: 720,
+          keywords: ['food', 'restaurant'],
+          random: true)),
 );
